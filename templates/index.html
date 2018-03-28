@@ -1,21 +1,57 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="static/index.css">
         <script src="static/index.js"></script>
+        <style>
+            body, html {
+                height: 100%
+            }
+
+            .bgimg {
+                /* Background image */
+                background-color: black;
+                height: 100%;
+                background-position: center;
+                background-size: cover;
+                position: relative;
+                color: white;
+                font-family: "Courier New", Courier, monospace;
+                font-size: 25px;
+            }
+
+            /* Position text in the top-left corner */
+            .topleft {
+                position: absolute;
+                top: 0;
+                left: 16px;
+            }
+
+            /* Position text in the bottom-left corner */
+            .bottomleft {
+                position: absolute;
+                bottom: 0;
+                left: 16px;
+            }
+
+            /* Position text in the middle */
+            .middle {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+            }
+
+        </style>
     </head>
     <body>
         <div class="bgimg">
-        <div class="topleft">
-            <p>Logo</p>
-        </div>
         <div class="middle">
-            <h1>COMING SOON</h1>
+            <h6>Countdown to:</h3>
+            <h3>Yom Ha'azmaut</h1>
+            <h4>יום העצמאות</h2>
             <hr>
-            <p>35 days left</p>
-        </div>
-        <div class="bottomleft">
-            <p>Some text</p>
+            <h1 id="demo">0d 0h 0m 0s</h1>
         </div>
         </div>
     </body>
