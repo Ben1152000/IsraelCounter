@@ -2,57 +2,70 @@
 <html>
     <head>
         <script src="static/index.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
         <style>
-            body, html {
+            html {
                 height: 100%
             }
-
-            .bgimg {
-                /* Background image */
-                background-color: black;
+            body {
                 height: 100%;
-                background-position: center;
-                background-size: cover;
-                position: relative;
+                margin: 0px;
+                background: black url("https://i.imgur.com/ogMocG5.jpg") no-repeat center;
+                background-size: 100% 100%;
+                font-family: 'Muli', sans-serif;
                 color: white;
-                font-family: "Courier New", Courier, monospace;
-                font-size: 25px;
             }
-
-            /* Position text in the top-left corner */
-            .topleft {
-                position: absolute;
-                top: 0;
-                left: 16px;
-            }
-
-            /* Position text in the bottom-left corner */
-            .bottomleft {
-                position: absolute;
-                bottom: 0;
-                left: 16px;
-            }
-
             /* Position text in the middle */
             .middle {
+                background-color: rgba(0,0,0,0.5);
+                border-radius: 10px;
                 position: absolute;
                 top: 50%;
                 left: 50%;
+                width: 55%;
                 transform: translate(-50%, -50%);
                 text-align: center;
+                line-height: 5pt;
             }
-
         </style>
     </head>
     <body>
-        <div class="bgimg">
+        <img style="width: 200px; margin: 10px" src="static/logo.png">
         <div class="middle">
-            <h6>Countdown to:</h3>
-            <h3>Yom Ha'azmaut</h1>
-            <h4>יום העצמאות</h2>
+            <h3 style=font-size:30px>Countdown to:</h3>
+            <h3 style=font-size:50px>Yom Ha'azmaut</h1>
+            <h3 style=font-size:50px>יום העצמאות</h2>
             <hr>
-            <h1 id="demo">0d 0h 0m 0s</h1>
-        </div>
+            <h1 style="font-size:80px" id="demo">0d 0h 0m 0s</h1>
         </div>
     </body>
+    <script>
+        carousel(0);
+
+        function carousel(i) {
+            console.log(i);
+            var x = [
+                "https://i.imgur.com/ogMocG5.jpg", 
+                "https://i.imgur.com/LIc03Ei.jpg",
+                "https://i.imgur.com/XbOkKsD.jpg",
+                "https://i.imgur.com/QLdVu2l.jpg",
+                "https://i.imgur.com/7vjTSLC.jpg",
+                "https://i.imgur.com/EV0ZRXu.jpg",
+                "https://i.imgur.com/8vIJrxl.jpg",
+                "https://i.imgur.com/Q3Ig5Kn.jpg",
+                "https://i.imgur.com/UHVnuNU.jpg",
+                "https://i.imgur.com/o4Qxujh.jpg",
+                "https://i.imgur.com/V2guPC0.jpg",
+                "https://i.imgur.com/3hnRjGY.jpg",
+                "https://i.imgur.com/ZAnz4M9.jpg",
+                "https://i.imgur.com/fTOYif7.jpg",
+                "https://i.imgur.com/MvhI5fB.jpg",
+                "https://i.imgur.com/yanycxq.jpg",
+                "https://i.imgur.com/0RZEvqS.jpg",
+            ];
+            document.body.style.backgroundImage = "url(" + x[i] + ")";
+            document.body.style.transition = "background-image 1s linear";
+            setTimeout(carousel, 10000, (i+1) % (x.length)); // Change image every 2 seconds
+        }
+    </script>
 </html>

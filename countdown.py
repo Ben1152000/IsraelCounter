@@ -1,4 +1,4 @@
-import sys, os, time, json, hashlib
+import sys, os, time, json, hashlib, subprocess
 import datetime as dt
 from flask import Flask, render_template, session, request, redirect, url_for
 from flask import make_response
@@ -10,6 +10,8 @@ app = Flask(__name__)
 def main():
     return render_template('index.html')
 
-app.secret_key = os.urandom(12) #generate secret key
+app.secret_key = os.urandom(12)
 if __name__ == "__main__":
-    app.run(debug=True) #run Flask application
+    host = str(subprocess.check_output(['ipconfig', 'getifaddr', 'en0']))[2:-3] # change host to equal "localhost" when offline
+    app.run(debug=True, use_reloader=False, host=host, port="5000") # change use_reloader to True when running
+    
